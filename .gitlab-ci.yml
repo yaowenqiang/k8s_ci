@@ -4,14 +4,14 @@ stages:
   - deploy
 
 compile:
-    stages: build
+    stage: build
     image: golang:1.10.3
     script:
       - go build -o example-app
     artifacts:
         paths:
           - example-app
-    exmpire_in 1 week
+        expire_in: 1 week
 
 dockerbuild:
     stage: package
